@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace对应接口的全类名 -->
+<mapper namespace="com.tck.dao.UserDao">
+    <select id="findAll"  resultType="com.tck.entity.User">
+        select * from t_user
+    </select>
+    
+    <select id="findById" resultType="com.tck.entity.User">
+        select * from t_user where user_id = #{userid}
+    </select>
+    
+    <delete id="deleteById" parameterType="int">
+        delete from t_user where user_id = #{userid}
+    </delete>
+    
+    <insert id="addUser" parameterType="com.tck.entity.User">
+        insert into t_user (user_id,user_name,password,create_time,phone) values (#{userid},#{username},#{password},#{createtiem},#{phone})
+    </insert>
+    
+    <update id="updateUser" parameterType="com.tck.entity.User">
+        update t_user set user_name=#{username},password=#{password},create_time=#{createtime},phone=#{phone} where user_id=#{userid}
+    </update>
+</mapper>

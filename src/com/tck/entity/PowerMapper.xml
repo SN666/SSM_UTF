@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace对应接口的全类名 -->
+<mapper namespace="com.tck.dao.PowerDao">
+    <select id="findAll"  resultType="com.tck.entity.Power">
+        select * from t_power
+    </select>
+    
+    <select id="findById" resultType="com.tck.entity.Power">
+        select * from t_power where user_id = #{powerid}
+    </select>
+    
+</mapper>
