@@ -9,6 +9,7 @@ import com.tck.entity.User;
 public interface UserDao {
     List<User> findAll();
     User findById(String  userid);
+
     void deleteById(String  userid);
     void addUser(User user);
     void updateUser(User user);
