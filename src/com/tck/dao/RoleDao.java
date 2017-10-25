@@ -10,7 +10,6 @@ public interface RoleDao {
     List<User> findAll();
     User findById(String  userid);
     void deleteById(String  userid);
-
     void addUser(User user);
     void updateUser(User user);
 }
